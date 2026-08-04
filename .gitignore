@@ -1,6 +1,7 @@
 # Local data and generated artifacts
 /data/
 /warehouse/
+/mappings/
 
 # Python virtual environments
 venv/
