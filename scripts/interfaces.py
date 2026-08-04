@@ -11,3 +11,10 @@ class MappingRepository(Protocol):
 
     def load(self) -> Dict[str, str]:
         ...
+
+class ExchangeRateRepository(Protocol):
+    """Anything that can provide a currency-code -> USD-rate mapping satisfies this."""
+
+    def load(self) -> Dict[str, float]:
+        ...
+

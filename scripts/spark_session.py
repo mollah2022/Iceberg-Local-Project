@@ -34,6 +34,10 @@ def create_spark_session(app_name: str = "IcebergLocalPipeline") -> SparkSession
         .config(f"spark.sql.catalog.{CATALOG_NAME}.type", "hadoop")
         .config(f"spark.sql.catalog.{CATALOG_NAME}.warehouse", warehouse_path)
         .config("spark.sql.defaultCatalog", CATALOG_NAME)
+        .config("spark.driver.memory", "2g")
+        .config("spark.driver.maxResultSize", "1g")
+        .config("spark.sql.shuffle.partitions", "8")
+        .config("spark.sql.defaultCatalog", CATALOG_NAME)
     )
 
     return builder.getOrCreate()

@@ -15,3 +15,6 @@ class MappingLoadError(PipelineError):
 
 class RecordTransformError(PipelineError):
     """Raised when a single record cannot be transformed into the target schema."""
+
+class ExchangeRateFetchError(PipelineError):
+    """Raised when currency exchange rates cannot be fetched or parsed."""
