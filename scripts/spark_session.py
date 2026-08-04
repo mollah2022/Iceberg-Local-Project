@@ -37,6 +37,7 @@ def create_spark_session(app_name: str = "IcebergLocalPipeline") -> SparkSession
         .config("spark.driver.memory", "2g")
         .config("spark.driver.maxResultSize", "1g")
         .config("spark.sql.shuffle.partitions", "8")
+        .master("local[*]")
         .config("spark.sql.defaultCatalog", CATALOG_NAME)
     )
 
